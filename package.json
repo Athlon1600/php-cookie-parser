@@ -1,0 +1,7 @@
+{
+  "name": "cookie-parser",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@nesk/puphpeteer": "^2.0.0"
+  }
+}

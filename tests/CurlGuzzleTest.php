@@ -6,6 +6,7 @@ use CookieParser\CookieJar;
 use Curl\BrowserClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
+use Nesk\Puphpeteer\Puppeteer;
 use PHPUnit\Framework\TestCase;
 
 class CurlGuzzleTest extends TestCase
@@ -53,5 +54,32 @@ class CurlGuzzleTest extends TestCase
 
         $this->assertStringContainsString('"one": "111"', $contents);
         $this->assertStringContainsString('"two": "222"', $contents);
+    }
+
+    public function testChromeToCurl()
+    {
+        $puppeteer = new Puppeteer();
+
+        $browser = $puppeteer->launch([
+            'headless' => true,
+            'ignoreDefaultArgs' => ['--enable-automation'],
+        ]);
+
+        $page = $browser->newPage();
+        $page->goto('https://httpbin.org/cookies/set?one=111&two=222');
+
+        $jar = CookieJar::fromAuto($page->cookies());
+
+        $this->assertCount(2, $jar->cookies);
+
+        file_put_contents($this->curl_cookie_file, $jar->toNetscape());
+
+        $curl = new BrowserClient();
+        $curl->setCookieFile($this->curl_cookie_file);
+
+        $responseBody = $curl->get('https://httpbin.org/cookies')->body;
+
+        $this->assertStringContainsString('"one": "111"', $responseBody);
+        $this->assertStringContainsString('"two": "222"', $responseBody);
     }
 }
