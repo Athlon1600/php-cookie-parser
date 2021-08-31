@@ -1,5 +1,7 @@
 # PHP Cookie Parser
 
+[![Build Status](https://img.shields.io/github/workflow/status/athlon1600/php-cookie-parser/CI)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
+
 Needed to be able to convert between different cookies formats, which is especially useful when sharing cookies across different applications like PHP/Curl and Chrome Puppeteer.
 
 ## Formats supported
