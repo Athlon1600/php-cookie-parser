@@ -38,7 +38,7 @@ class CookieJar
         $lines = preg_split('/\r\n|\r|\n/', $contents);
         $lines = array_map('trim', $lines);
 
-        $jar = new static();
+        $jar = new CookieJar();
 
         foreach ($lines as $line) {
 
@@ -76,7 +76,7 @@ class CookieJar
         $lines = preg_split('/\r\n|\r|\n/', $contents);
         $lines = array_map('trim', $lines);
 
-        $jar = new static();
+        $jar = new CookieJar();
 
         foreach ($lines as $line) {
             $cookie = Cookie::fromNetscape($line);
