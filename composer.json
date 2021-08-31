@@ -1,0 +1,22 @@
+{
+    "name": "athlon1600/php-cookie-parser",
+    "authors": [],
+    "require": {
+        "php": "^7.2.5 || ^8.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.3.0",
+        "phpunit/phpunit": "9",
+        "athlon1600/php-curl-client": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CookieParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CookieParser\\Tests\\": "tests/"
+        }
+    }
+}
