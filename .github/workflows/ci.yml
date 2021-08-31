@@ -3,6 +3,24 @@ name: CI
 on: [push]
 
 jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      uses: php-actions/composer@v5
+      with:
+        php_extensions: sockets
+    
+    - name: Run tests
+      run: vendor/bin/phpunit tests
+    
+    
   phpstan:
     runs-on: ubuntu-latest
     steps:
