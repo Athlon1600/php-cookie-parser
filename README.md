@@ -1,6 +1,8 @@
 # PHP Cookie Parser
 
-[![Build Status](https://img.shields.io/github/workflow/status/athlon1600/php-cookie-parser/CI)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/athlon1600/php-cookie-parser/ci.yml)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
+![GitHub last commit](https://img.shields.io/github/last-commit/athlon1600/php-cookie-parser)
+
 
 Needed to be able to convert between different cookies formats, which is especially useful when sharing cookies across different applications like PHP/Curl and Chrome Puppeteer.
 
@@ -16,6 +18,12 @@ Needed to be able to convert between different cookies formats, which is especia
 Convert between formats in real-time within your browser + lots of other cool features:
 
 - https://cookiebin.net
+
+## Installation
+
+```bash
+composer require athlon1600/php-cookie-parser
+```
 
 ## Useful links
 
