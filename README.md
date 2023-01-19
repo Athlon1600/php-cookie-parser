@@ -17,7 +17,7 @@ Needed to be able to convert between different cookies formats, which is especia
 
 Convert between formats in real-time within your browser + lots of other cool features:
 
-- https://cookiebin.net
+- https://www.proxynova.com/tools/cookiebin
 
 ## Installation
 
